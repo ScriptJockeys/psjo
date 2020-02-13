@@ -10,4 +10,13 @@ Describe "Tests psjo" {
 '@
         $actual | should beexactly $expected
     }
+
+    It "Should handle nulls" {
+        $actual = ConvertFrom-Json (psjo name=Jane b=1 c)
+
+        $actual.psobject.properties.name.count | should be 3
+        $actual.name | should be 'Jane'
+        $actual.b | should be 1
+        $actual.c | should be $null
+    }
 }

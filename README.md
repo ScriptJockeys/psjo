@@ -29,3 +29,17 @@ PS C:\> psjo name=Jane
 ```powershell
 {"name":"Jane"}
 ```
+
+```ps
+PS C:\> psjo name=Jane b=1 c d=$(get-date) e=$($env:ComSpec)
+```
+
+```powershell
+{
+    "name":  "Jane",
+    "b":  "1",
+    "c":  null,
+    "d":  "02/13/2020 18:49:44",
+    "e":  "C:\\WINDOWS\\system32\\cmd.exe"
+}
+```
