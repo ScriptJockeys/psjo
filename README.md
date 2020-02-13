@@ -22,7 +22,7 @@ PS C:\> ConvertTo-Json @{name='Jane'}
 
 ## Enter psjo
 
-``ps
+```ps
 PS C:\> psjo name=Jane
 ```
 
