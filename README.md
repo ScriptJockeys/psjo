@@ -43,3 +43,30 @@ PS C:\> psjo name=Jane b=1 c d=$(get-date) e=$($env:ComSpec)
     "e":  "C:\\WINDOWS\\system32\\cmd.exe"
 }
 ```
+
+```powershell
+PS C:\> psjo name=Jane b=1 c d=$(get-date) e=$($env:ComSpec)
+
+{
+    "name":  "Jane",
+    "b":  "1",
+    "c":  null,
+    "d":  "02/13/2020 18:49:44",
+    "e":  "C:\\WINDOWS\\system32\\cmd.exe"
+}
+```
+
+## Handles Nested JSON
+
+```ps
+PS C:\> psjo point=$(psjo x=10 y=20)
+```
+
+```powershell
+{
+    "point":  {
+                "x":  10,
+                "y":  20
+            }
+}
+```

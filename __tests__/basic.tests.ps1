@@ -19,4 +19,10 @@ Describe "Tests psjo" {
         $actual.b | should be 1
         $actual.c | should be $null
     }
+
+    It "Should handle nested data" {
+        $actual = ConvertFrom-Json (psjo point=$(psjo x=10 y=20))
+
+        $actual.point.x | should be 10
+    }
 }
