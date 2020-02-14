@@ -15,16 +15,11 @@ function psjo {
         }
     #>
 
-    $h = [ordered]@{ }
+    $dict = [ordered]@{ }
     foreach ($item in $args) {
-        $k, $v = $item.split('=')
-        if ($v -is [string]) {
-            try {
-                $v = ConvertFrom-Json $v
-            }
-            catch { }
-        }
-        $h.$k = $v
+        $key, $value = $item.split('=')
+        try { $value = ConvertFrom-Json $value } catch { }
+        $dict.$key = $value
     }
-    ConvertTo-Json $h -Depth 5
+    ConvertTo-Json $dict -Depth 5
 }
