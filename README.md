@@ -71,6 +71,8 @@ PS C:\> psjo point=$(psjo x=10 y=20)
 }
 ```
 
+### Very nested
+
 ```ps
 PS C:\> psjo glossary=$(
     psjo title="example glossary" GlossDiv=$(
@@ -82,8 +84,6 @@ PS C:\> psjo glossary=$(
     )
 )
 ```
-
-### Very nested
 
 ```powershell
 {
