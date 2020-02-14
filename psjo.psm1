@@ -26,5 +26,5 @@ function psjo {
         }
         $h.$k = $v
     }
-    ConvertTo-Json $h
+    ConvertTo-Json $h -Depth 5
 }

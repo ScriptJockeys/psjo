@@ -70,3 +70,39 @@ PS C:\> psjo point=$(psjo x=10 y=20)
             }
 }
 ```
+
+```ps
+PS C:\> psjo glossary=$(
+    psjo title="example glossary" GlossDiv=$(
+        psjo title=S GlossEntry=$(
+            psjo ID=SGML SortAs=SGML GlossTerm='Standard Generalized Markup Language' Acronym\SGML Abbrev='ISO 8879:1986' GlossDef=$(
+                psjo para='A meta-markup language, used to create markup languages such as DocBook.'
+            ) GlossSee=markup
+        )
+    )
+)
+```
+
+### Very nested
+
+```powershell
+{
+    "glossary": {
+        "title": "example glossary",
+        "GlossDiv": {
+            "title": "S",
+            "GlossEntry": {
+                "ID": "SGML",
+                "SortAs": "SGML",
+                "GlossTerm": "Standard Generalized Markup Language",
+                "Acronym\\SGML": null,
+                "Abbrev": "ISO 8879:1986",
+                "GlossDef": {
+                    "para": "A meta-markup language, used to create markup languages such as DocBook."
+                },
+                "GlossSee": "markup"
+            }
+        }
+    }
+}
+```
